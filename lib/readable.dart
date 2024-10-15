@@ -1,14 +1,19 @@
+// lib/readable.dart
 import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class Readable {
-  static var QuranData;
+  static Map<String, dynamic>? QuranData;
 
   static Future<void> readJson() async {
-    final String response =
-        await rootBundle.loadString('assets/jsons/quran_bn.json');
-    final data = await json.decode(response);
+    try {
+      final String response =
+          await rootBundle.loadString('assets/jsons/quran_bn.json');
+      final data = jsonDecode(response);
 
-    QuranData = data;
+      QuranData = data;
+    } catch (e) {
+      print('Error reading JSON: $e');
+    }
   }
 }
