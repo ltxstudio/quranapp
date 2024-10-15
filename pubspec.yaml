@@ -26,5 +26,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/jsons/quran_bn.json
+    - assets/quran_bn.json
     - assets/audio/
