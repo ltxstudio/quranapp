@@ -8,7 +8,7 @@ class Readable {
   static Future<void> readJson() async {
     try {
       final String response =
-          await rootBundle.loadString('assets/jsons/quran_bn.json');
+          await rootBundle.loadString('assets/quran_bn.json');
       final data = jsonDecode(response);
 
       QuranData = data;
